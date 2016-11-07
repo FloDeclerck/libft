@@ -3,39 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrameau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 01:39:09 by jrameau           #+#    #+#             */
-/*   Updated: 2016/09/23 01:39:10 by jrameau          ###   ########.fr       */
+/*   Created: 2016/11/06 17:56:02 by fdeclerc          #+#    #+#             */
+/*   Updated: 2016/11/06 18:33:53 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-char	*ft_strstr(const char *big, const char *little)
+char	*ft_strstr(const char *str, const char *lstr)
 {
-	int		i;
-	int		j;
-	int		k;
-	int		good;
+	char const *strb;
+	char const *lstrb;
 
-	if (!ft_strlen(little))
-		return ((char *)big);
-	i = -1;
-	good = 0;
-	while (*(big + ++i) && !good)
+	lstrb = lstr;
+	while (*str != '\0')
 	{
-		if (*(big + i) == *(little + 0))
+		strb = str;
+		while (*lstr != '\0' && *str == *lstr)
 		{
-			j = 0;
-			k = i;
-			good = 1;
-			while (*(little + j))
-				if (*(little + j++) != *(big + k++))
-					good = 0;
-			if (good)
-				return ((char *)big + i);
+			++str;
+			++lstr;
 		}
+		if (*lstr == '\0')
+			return ((char*)strb);
+		str = strb + 1;
+		lstr = lstrb;
 	}
-	return (NULL);
+	return (*lstr == '\0' ? (char*)str : NULL);
 }

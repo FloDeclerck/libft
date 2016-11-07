@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrameau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 21:34:36 by jrameau           #+#    #+#             */
-/*   Updated: 2016/09/21 21:34:37 by jrameau          ###   ########.fr       */
+/*   Created: 2016/11/07 15:34:46 by fdeclerc          #+#    #+#             */
+/*   Updated: 2016/11/07 15:39:19 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void		*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	char	*ptr;
 	size_t	i;

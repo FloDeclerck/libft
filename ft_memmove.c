@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrameau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/22 12:41:41 by jrameau           #+#    #+#             */
-/*   Updated: 2016/09/24 17:15:13 by jrameau          ###   ########.fr       */
+/*   Created: 2016/11/07 15:40:40 by fdeclerc          #+#    #+#             */
+/*   Updated: 2016/11/07 15:47:09 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void		*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*srcc;
 	char	*dstc;

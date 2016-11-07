@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrameau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 15:52:51 by jrameau           #+#    #+#             */
-/*   Updated: 2016/09/21 15:52:53 by jrameau          ###   ########.fr       */
+/*   Created: 2016/11/07 12:49:05 by fdeclerc          #+#    #+#             */
+/*   Updated: 2016/11/07 12:53:40 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero(void *str, size_t n)
 {
 	char	*ptr;
 	size_t	i;
 
 	if (!n)
-		return ;
+		return (0);
 	ptr = s;
 	i = 0;
 	while (i < n)
