@@ -3,39 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akalmyko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 11:46:11 by fdeclerc          #+#    #+#             */
-/*   Updated: 2016/11/07 12:10:12 by fdeclerc         ###   ########.fr       */
+/*   Created: 2016/09/26 16:51:38 by akalmyko          #+#    #+#             */
+/*   Updated: 2016/09/26 16:51:41 by akalmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-char		*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
-	int		find;
+	size_t	index;
+	size_t	index2;
 
-	i = -1;
-	find = 1;
-	if (!ft_strlen(little))
+	if (!*little)
 		return ((char *)big);
-	while (*(big + ++i) && i < len)
+	index2 = 0;
+	while (big[index2])
 	{
-		j = 0;
-		if (*(big + i) == *(little + 0))
-		{
-			k = i;
-			find = 1;
-			while (*(big + k) && *(little + j) && j < len && k < len)
-				if (*(big + k++) != *(little + j++))
-					find = 0;
-			if (find && !*(little + j))
-				return ((char *)big + i);
-		}
+		index = 0;
+		while (big[index2 + index] == little[index] && index2 + index < len)
+			if (!little[++index])
+				return ((char *)(big + index2));
+		index2++;
 	}
-	return (NULL);
+	return (0);
 }

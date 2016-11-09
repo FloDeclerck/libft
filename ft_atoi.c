@@ -3,29 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akalmyko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 12:28:10 by fdeclerc          #+#    #+#             */
-/*   Updated: 2016/11/07 12:37:26 by fdeclerc         ###   ########.fr       */
+/*   Created: 2016/09/26 18:07:21 by akalmyko          #+#    #+#             */
+/*   Updated: 2016/10/06 10:34:54 by akalmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int		ft_atoi(const char *str)
 {
-	int i;
-	int j;
-	int out;
+	int		result;
+	int		sign;
 
-	i = 0;
-	j = 1;
-	out = 0;
-	while (str[i] >= '0' && str[i] <= '9')
+	sign = 1;
+	result = 0;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-')
+		sign = -1;
+	if (*str == '+' || *str == '-')
+		str++;
+	while (ft_isdigit(*str))
 	{
-		out *= 10;
-		out += str[i] - '0';
-		i++;
+		result = 10 * result + (*str - '0');
+		str++;
 	}
-	return (out);
+	return (result * sign);
 }

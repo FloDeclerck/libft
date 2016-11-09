@@ -3,34 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akalmyko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 16:58:14 by fdeclerc          #+#    #+#             */
-/*   Updated: 2016/11/06 17:50:28 by fdeclerc         ###   ########.fr       */
+/*   Created: 2016/09/24 15:44:53 by akalmyko          #+#    #+#             */
+/*   Updated: 2016/09/24 15:44:55 by akalmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char	*comp;
-	int		real;
+	char	*match;
+	int		truth;
 
-	real = 0;
-	while (*str != '\0')
+	truth = 0;
+	while (*s != '\0')
 	{
-		if (c == *str)
+		if (c == *s)
 		{
-			comp = (char*)str;
-			real = 1;
+			match = (char*)s;
+			truth = 1;
 		}
-		str++;
+		s++;
 	}
-	if (real > 0)
-		return (comp);
+	if (truth > 0)
+		return (match);
 	if (c == '\0')
-		return ((char*)str);
+		return ((char*)s);
 	else
 		return (NULL);
 }

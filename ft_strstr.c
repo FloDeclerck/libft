@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akalmyko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 17:56:02 by fdeclerc          #+#    #+#             */
-/*   Updated: 2016/11/06 18:33:53 by fdeclerc         ###   ########.fr       */
+/*   Created: 2016/09/24 16:42:30 by akalmyko          #+#    #+#             */
+/*   Updated: 2016/09/24 16:42:31 by akalmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *str, const char *lstr)
+char	*ft_strstr(const char *big, const char *little)
 {
-	char const *strb;
-	char const *lstrb;
+	char const	*bigbox;
+	char const	*littlebox;
 
-	lstrb = lstr;
-	while (*str != '\0')
+	littlebox = little;
+	while (*big != '\0')
 	{
-		strb = str;
-		while (*lstr != '\0' && *str == *lstr)
+		bigbox = big;
+		while (*little != '\0' && *big == *little)
 		{
-			++str;
-			++lstr;
+			++big;
+			++little;
 		}
-		if (*lstr == '\0')
-			return ((char*)strb);
-		str = strb + 1;
-		lstr = lstrb;
+		if (*little == '\0')
+			return ((char *)bigbox);
+		big = bigbox + 1;
+		little = littlebox;
 	}
-	return (*lstr == '\0' ? (char*)str : NULL);
+	return (*little == '\0' ? (char *)big : NULL);
 }
