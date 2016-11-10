@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalmyko <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/29 16:10:07 by akalmyko          #+#    #+#             */
-/*   Updated: 2016/09/29 16:10:10 by akalmyko         ###   ########.fr       */
+/*   Created: 2016/11/10 11:29:14 by fdeclerc          #+#    #+#             */
+/*   Updated: 2016/11/10 11:54:57 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	*ft_strnew(size_t size)
 {
-	char	*str;
+	char *str;
 
 	str = (char*)malloc(size + 1);
 	if (str)

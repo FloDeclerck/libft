@@ -3,32 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalmyko <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/26 18:07:21 by akalmyko          #+#    #+#             */
-/*   Updated: 2016/10/06 10:34:54 by akalmyko         ###   ########.fr       */
+/*   Created: 2016/11/07 12:28:10 by fdeclerc          #+#    #+#             */
+/*   Updated: 2016/11/09 15:52:40 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int		ft_atoi(const char *nptr)
 {
-	int		result;
-	int		sign;
+	int i;
+	int j;
+	int out;
 
-	sign = 1;
-	result = 0;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '+' || *str == '-')
-		str++;
-	while (ft_isdigit(*str))
+	i = 0;
+	j = 1;
+	out = 0;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		result = 10 * result + (*str - '0');
-		str++;
+		out *= 10;
+		out += nptr[i] - '0';
+		i++;
 	}
-	return (result * sign);
+	return (out);
 }

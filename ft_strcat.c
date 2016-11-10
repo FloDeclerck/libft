@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalmyko <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/23 22:45:34 by akalmyko          #+#    #+#             */
-/*   Updated: 2016/09/23 22:45:35 by akalmyko         ###   ########.fr       */
+/*   Created: 2016/11/06 14:28:38 by fdeclerc          #+#    #+#             */
+/*   Updated: 2016/11/09 14:47:08 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strcat(char *s1, const char *s2)
+char	*ft_strcat(char *dest, const char *src)
 {
-	char	*temp;
+	char *tmp;
 
-	temp = s1;
-	while (*s1 != '\0')
-		s1++;
-	while (*s2 != '\0')
-		*s1++ = *s2++;
-	*s1 = '\0';
-	return (temp);
+	tmp = dest;
+	while (*dest != '\0')
+		dest++;
+	while (*src != '\0')
+		*dest++ = *src++;
+	*dest = '\0';
+	return (tmp);
 }

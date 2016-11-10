@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalmyko <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/29 17:51:03 by akalmyko          #+#    #+#             */
-/*   Updated: 2016/09/29 17:51:04 by akalmyko         ###   ########.fr       */
+/*   Created: 2016/11/10 13:11:04 by fdeclerc          #+#    #+#             */
+/*   Updated: 2016/11/10 13:24:01 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strmap(char const *s, char (*f)(char))
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char	*str;
-	char	*ptr;
+	char *str;
+	char *ptr;
 
 	if (s)
 	{
