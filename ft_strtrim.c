@@ -3,31 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalmyko <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/30 16:13:26 by akalmyko          #+#    #+#             */
-/*   Updated: 2016/09/30 16:13:27 by akalmyko         ###   ########.fr       */
+/*   Created: 2016/11/12 14:57:36 by fdeclerc          #+#    #+#             */
+/*   Updated: 2016/11/13 14:35:59 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <string.h>
 #include "libft.h"
 
-char				*ft_strtrim(char const *s)
+char		*ft_strtrim(char const *s)
 {
-	char			*copy;
-	char			*beg;
-	char			*end;
+	int		i;
+	int		len;
+	char	*str;
 
-	if (s)
-	{
-		beg = ft_skipspace_beg((char*)s);
-		end = ft_skipspace_end((char*)beg);
-		if (!(copy = (char*)malloc(sizeof(char) * (ft_ptrlen(beg, end) + 1))))
-			return (NULL);
-		ft_strncpy(copy, beg, ft_ptrlen(beg, end));
-		copy[ft_ptrlen(beg, end)] = '\0';
-		return (copy);
-	}
-	else
+	if (s == NULL)
 		return (NULL);
+	len = ft_strlen(s);
+	while (s[len - 1] == ' ' || s[len - 1] == '\t' || s[len - 1] == '\n')
+		len--;
+	i = -1;
+	while (s[++i] == ' ' || s[i] == '\t' || s[i] == '\n')
+		len--;
+	if (len <= 0)
+		len = 0;
+	str = (char*)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	s += i;
+	i = -1;
+	while (++i < len)
+		str[i] = *s++;
+	str[i] = '\0';
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 16:15:33 by fdeclerc          #+#    #+#             */
-/*   Updated: 2016/11/09 16:17:38 by fdeclerc         ###   ########.fr       */
+/*   Updated: 2016/11/13 14:36:50 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isprint(int c)
 {
-	if (c >= 32 && c <= 127)
+	if ((unsigned int)c >= ' ' && (unsigned int)c <= '~')
 		return (1);
 	else
 		return (0);

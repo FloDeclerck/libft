@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalmyko <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/01 11:15:03 by akalmyko          #+#    #+#             */
-/*   Updated: 2016/10/03 19:26:25 by akalmyko         ###   ########.fr       */
+/*   Created: 2016/11/12 15:17:39 by fdeclerc          #+#    #+#             */
+/*   Updated: 2016/11/12 19:53:22 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_find_word(const char *str, int i, char **ret, char c)
+static int	ft_find_word(const char *str, int i, char **ret, char c)
 {
-	int			len;
-	int			space;
+	int		len;
+	int		space;
 
 	space = 0;
 	len = 0;
@@ -34,7 +34,7 @@ static int		ft_find_word(const char *str, int i, char **ret, char c)
 	return (space + len);
 }
 
-static int		ft_count_words(const char *str, int i, char c)
+static int	ft_count_words(const char *str, int i, char c)
 {
 	while (*str == c)
 		str++;
@@ -49,18 +49,18 @@ static int		ft_count_words(const char *str, int i, char c)
 	return (i);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
-	int			len;
-	char		**ret;
-	int			i;
-	int			wc;
+	int		len;
+	char	**ret;
+	int		i;
+	int		wc;
 
 	if (!s)
 		return (NULL);
 	wc = ft_count_words(s, 0, c);
 	len = 0;
-	ret = (char **)ft_memalloc((wc + 1) * sizeof(char *));
+	ret = (char**)ft_memalloc((wc + 1) * sizeof(char *));
 	if (!ret)
 		return (NULL);
 	i = 0;
