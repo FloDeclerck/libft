@@ -11,10 +11,10 @@
 # **************************************************************************** #
 
 NAME = libft.a
-CC = gcc
-FLAGS = -Wall -Wextra -Werror -c
-RM = /bin/rm -rfv
-CFILES = ft_atoi.c \
+
+FLAG = -Wall -Wextra -Werror -c
+
+SRC = ft_atoi.c \
 		 ft_bzero.c \
 		 ft_isalnum.c \
 		 ft_isalpha.c \
