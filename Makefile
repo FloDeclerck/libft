@@ -72,24 +72,22 @@ CFILES = ft_atoi.c \
 		 ft_strtrim.c \
 		 ft_tolower.c \
 		 ft_toupper.c
-OFILES = $(CFILES:.c=.o)
 
-.PHONY: clean fclean re all
+OBJ = $(SRC:.c=.o)
+
+.PHONY: clean fclean re
 
 all: $(NAME)
 
 $(NAME):
-	clear
-	@echo compiling...
-	@$(CC) $(FLAGS) $(CFILES)
-	@ar rc $(NAME) $(OFILES)
-	clear
+	gcc $(FLAG) $(SRC)
+	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 clean:
-	@$(RM) $(OFILES) | wc -l | tr '\n' ' ' && echo ft_*.o files deleted
+	/bin/rm -f $(OBJ)
 
 fclean: clean
-	@$(RM) $(NAME) | wc -l | tr '\n' ' ' && echo $(NAME) deleted
+	/bin/rm -f $(NAME)
 
 re: fclean all
