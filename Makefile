@@ -65,15 +65,13 @@ SRC = ft_atoi.c \
 		 ft_strnequ.c \
 		 ft_strnew.c \
 		 ft_strnstr.c \
-		 ft_strrchr.c \
-		 ft_strreverse.c \		 
+		 ft_strrchr.c \		 
 		 ft_strsplit.c \
 		 ft_strstr.c \
 		 ft_strsub.c \
 		 ft_strtrim.c \
 		 ft_tolower.c \
-		 ft_toupper.c \		 
-		 ft_count_words.c 
+		 ft_toupper.c 
 
 OBJ = $(SRC:.c=.o)
 
