@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strrevers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 12:28:10 by fdeclerc          #+#    #+#             */
-/*   Updated: 2016/12/07 13:34:47 by fdeclerc         ###   ########.fr       */
+/*   Created: 2016/09/27 16:53:47 by fdeclerc          #+#    #+#             */
+/*   Updated: 2017/01/20 16:26:14 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_atoi(const char *str)
+void	ft_strreverse(char *s)
 {
-	int		sign;
-	int		res;
+	size_t	i;
+	size_t	j;
+	char	bfr;
 
-	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\v'
-			|| *str == '\r' || *str == '\f')
-		str++;
-	res = 0;
-	sign = 1;
-	if (*str == '-' || *str == '+')
+	i = 0;
+	j = ft_strlen(s) - 1;
+	while (i < j)
 	{
-		sign = (*str == '-' ? -1 : 1);
-		str++;
+		bfr = s[i];
+		s[i] = s[j];
+		s[j] = bfr;
+		j--;
+		i++;
 	}
-	while (ft_isdigit(*str))
-	{
-		res = (res * 10) + (*str - '0');
-		str++;
-	}
-	return (res * sign);
 }

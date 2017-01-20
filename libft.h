@@ -6,7 +6,7 @@
 /*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 13:54:57 by fdeclerc          #+#    #+#             */
-/*   Updated: 2016/11/13 14:47:41 by fdeclerc         ###   ########.fr       */
+/*   Updated: 2017/01/11 12:37:46 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,17 +83,8 @@ void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char			*ft_strncat(char *dest, const char *src, size_t n);
-int				ft_isspace(int c);
-char			ft_nextchar(char c);
-char			ft_prvschar(char c);
-char			*ft_skipspace_begin(char *s);
-char			*ft_skipspace_end(char *s);
-size_t			ft_ptrlen(char *begin, char *end);
-char			*ft_ptrtoend(char *s);
+void			ft_strreverse(char *s);
 char			*ft_strtrim(char const *s);
-size_t			ft_strchr_qt(char *s, char c);
-char			*ft_strchrto_end(char *s, char c);
-char			*ft_skipchr(char *s, char c);
-char			*ft_skiptochr(char *s, char c);
+int				get_next_line(int const fd, char **line);
 
 #endif

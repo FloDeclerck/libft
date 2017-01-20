@@ -5,14 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fdeclerc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/12 14:57:36 by fdeclerc          #+#    #+#             */
-/*   Updated: 2016/11/13 14:35:59 by fdeclerc         ###   ########.fr       */
+/*   Created: 2016/11/16 11:42:09 by fdeclerc          #+#    #+#             */
+/*   Updated: 2016/11/16 11:47:12 by fdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
 #include "libft.h"
+#include <stdlib.h>
 
 char		*ft_strtrim(char const *s)
 {
